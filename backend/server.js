@@ -20,13 +20,13 @@ app.get('/assets', (req, res) => {
       const priceData = prices.find(price => price.id === asset.id);
 
       if (priceData) {
-        const existingAssetClass = totalAssetClassPrices.find(item => item.name === asset.type);
+        const existingAssetClass = totalAssetClassPrices.find(item => item.name.toLowerCase() === asset.type.toLocaleLowerCase());
 
         if (existingAssetClass) {
           existingAssetClass.price += priceData.price;
         } else {
           totalAssetClassPrices.push({
-            name: asset.type,
+            name: asset.type.charAt(0).toUpperCase() + asset.type.slice(1),
             price: priceData.price,
           });
         }
@@ -39,13 +39,13 @@ app.get('/assets', (req, res) => {
       const priceData = prices.find(price => price.id === asset.id);
 
       if (priceData) {
-        const existingAsset = totalAssetPrices.find(item => item.name === asset.name);
+        const existingAsset = totalAssetPrices.find(item => item.name.toLowerCase() === asset.name.toLocaleLowerCase());
 
         if (existingAsset) {
           existingAsset.price += priceData.price;
         } else {
           totalAssetPrices.push({
-            name: asset.name,
+            name: asset.name.charAt(0).toUpperCase() + asset.name.slice(1),
             price: priceData.price,
           });
         }

@@ -1,22 +1,20 @@
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
-import { PortfolioDonutChartProps } from "../types";
+import { PortfolioDataProps } from "../types";
 import { colorPalette } from "../colorPallet";
 
-const PortfolioDonutChart = ({ portfolioData }: PortfolioDonutChartProps) => {
+const PortfolioDonutChart = ({ portfolioData }: PortfolioDataProps) => {
   if (!portfolioData) {
     return <div>Loading...</div>;
   }
-
-  console.log(portfolioData);
   
   const COLORS = portfolioData.map((_, index) => {
     return colorPalette[index % colorPalette.length].hexCode;
   });
 
   return (
-    <div className="flex justify-center items-center p-4 w-full h-auto bg-gray-100">
-      <div className="w-full max-w-sm">
-        <ResponsiveContainer width="100%" height={400}>
+    <div className="flex flex-col items-center p-4 w-full h-auto bg-gray-100">
+      <div className="w-full">
+        <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie
               data={portfolioData}
