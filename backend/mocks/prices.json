@@ -1,87 +1,63 @@
 {
     "prices": [
       {
-        "id": "8f2a9c1a-5b24-45f4-b8f6-5f70b88b43f0",
+        "id": "a4f4e2d0-24b8-4d27-b408-bc08b63d59f9",
         "asset": "Apple Stock",
-        "type": "stock",
-        "date": "2023-02-15",
         "price": 288.50
       },
       {
-        "id": "2b3c8f0f-5578-47d7-8e2b-95bb83c4d48e",
+        "id": "6e6d60c0-687d-47c2-b33e-94cd9d36b2b9",
         "asset": "Bitcoin",
-        "type": "crypto",
-        "date": "2023-03-10",
         "price": 40500.78
       },
       {
-        "id": "b29b42d7-f5f1-49f3-96b1-36b5be3c407b",
+        "id": "2bcf8ee9-b0e3-4238-8d9b-4db85593f23d",
         "asset": "Ethereum",
-        "type": "crypto",
-        "date": "2023-01-20",
         "price": 2550.42
       },
       {
-        "id": "d32d9c3f-1b88-4efb-aee2-b1787ca83016",
+        "id": "d74f7a60-8d01-4aef-bb59-6e13b5c5e74a",
         "asset": "US Dollar",
-        "type": "fiat",
-        "date": "2023-04-05",
         "price": 1.00
       },
       {
-        "id": "1f4d6c9a-d91c-4f76-b727-49574ec92971",
+        "id": "c62d857b-032f-4684-9a5c-5da96d527a36",
         "asset": "Tesla Stock",
-        "type": "stock",
-        "date": "2023-02-28",
         "price": 665.25
       },
       {
-        "id": "7f6b98e7-cdb7-4b9f-9b87-dcc11db3bb44",
+        "id": "473a6d5a-f007-48e1-9773-639a14589de5",
         "asset": "Litecoin",
-        "type": "crypto",
-        "date": "2023-03-15",
         "price": 150.89
       },
       {
-        "id": "79f2296e-4694-45a1-87d1-22f23143dbfc",
+        "id": "baf7c2ae-d4b0-4068-bef5-e726d69424a4",
         "asset": "Google Stock",
-        "type": "stock",
-        "date": "2023-02-05",
         "price": 2750.35
       },
       {
-        "id": "98e992c5-e86c-44d4-b5d3-ea9912b6db2c",
+        "id": "fa3e9db2-9132-4a2e-90bc-643de12f8b3e",
         "asset": "XRP",
-        "type": "crypto",
-        "date": "2023-03-22",
         "price": 1.25
       },
       {
-        "id": "3ff2e08b-b8db-4c8c-897f-542d8e453d9d",
+        "id": "fcd0b9b9-aba3-49f4-9188-dc988a91ff2e",
         "asset": "Japanese Yen",
-        "type": "fiat",
-        "date": "2023-01-30",
         "price": 0.0077
       },
       {
-        "id": "b51f56e4-d6e2-4b4a-9738-ff9a03ec38b9",
+        "id": "7b660d7e-4b24-4b34-bef5-039ed9d17a5c",
         "asset": "S&P 500 Index Fund",
-        "type": "stock",
-        "date": "2023-03-12",
         "price": 4320.75
       },
       {
-        "id": "3dcd7fbe-7d9f-41a1-bbbd-88b758953eb3",
+        "id": "e2950a5f-5f6e-44d9-b318-85bc31a01360",
         "asset": "Vanguard Total Bond Market ETF",
-        "type": "stock",
-        "date": "2023-04-01",
         "price": 84.25
       },
       {
-        "id": "eeecf7b3-f6ad-45f0-8f2b-48cd6c7d27f0",
+        "id": "dd0b9d1e-dc6a-4749-b2f3-8a57a7026887",
         "asset": "British Pound",
-        "type": "fiat",
-        "date": "2023-02-10",
         "price": 1.37
       }
     ]

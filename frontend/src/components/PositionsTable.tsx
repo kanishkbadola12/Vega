@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PositionsTable() {
+const PositionsTable = () => {
   return (
     <div>PositionsTable</div>
   )
