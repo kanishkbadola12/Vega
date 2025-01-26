@@ -2,7 +2,7 @@ import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from "recha
 import { PortfolioDataProps } from "../types";
 import { colorPalette } from "../colorPallet";
 
-const PortfolioDonutChart = ({ portfolioData }: PortfolioDataProps) => {
+const PortfolioDonutChart = ({ portfolioData }: PortfolioDataProps): React.ReactElement => {
   if (!portfolioData) {
     return <div>Loading...</div>;
   }

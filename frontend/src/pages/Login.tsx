@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import Button from "../components/ui/Button";
 
 
-const Login = () => {
+const Login = (): React.ReactElement => {
   const [userEmail, setUserEmail] = useState<string>("");
   const [userPassword, setUserPassword] = useState<string>("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.MouseEvent): void => {
     e.preventDefault();
     const credentials = localStorage.getItem('loginCredentials');
 
@@ -40,7 +41,6 @@ const Login = () => {
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
       <div className="w-full max-w-md p-8 bg-white shadow-lg rounded-2xl">
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">Login</h2>
-        <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label
               htmlFor="email"
@@ -51,7 +51,7 @@ const Login = () => {
             <input
               type="email"
               id="email"
-              className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm"
               placeholder="Enter your email"
               required
               value={userEmail}
@@ -68,20 +68,18 @@ const Login = () => {
             <input
               type="password"
               id="password"
-              className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm"
               placeholder="Enter your password"
               required
               value={userPassword}
               onChange={(e) => setUserPassword(e.target.value)}
             />
           </div>
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-          >
-            Sign In
-          </button>
-        </form>
+          <Button
+            label="Sign In"
+            onClick={(e: React.MouseEvent) => handleSubmit(e)}
+            styleClass="w-full py-2 px-4 bg-black text-white font-medium rounded-lg shadow-md focus:outline-none cursor-pointer"
+          />
       </div>
     </div>
   );

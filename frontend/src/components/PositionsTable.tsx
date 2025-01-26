@@ -1,6 +1,6 @@
 import { Asset, PortfolioDataProps } from "../types"
 
-const PositionsTable = ({ portfolioData }: PortfolioDataProps) => {
+const PositionsTable = ({ portfolioData }: PortfolioDataProps): React.ReactElement => {
   const assetHeading = portfolioData && 
     portfolioData.some((asset: Asset) => asset.name.toLowerCase() === 'stock') 
     ? 'Asset Class' : 'Asset Name';

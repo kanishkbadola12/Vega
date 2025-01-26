@@ -7,7 +7,7 @@ const Button = ({
     styleClass,
     activeClass,
     inactiveClass,
-  }: ButtonProps) => {
+  }: ButtonProps): React.ReactElement => {
     return (
       <button
         onClick={onClick}

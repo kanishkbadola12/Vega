@@ -2,14 +2,13 @@ const express = require('express');
 const app = express();
 const { assets } = require('./mocks/assets.json');
 const { prices } = require('./mocks/prices.json');
-const  { portfolio } = require('./mocks/portfolio.json');
+const  { portfolios } = require('./mocks/portfolio.json');
 const cors = require('cors');
 
 app.use(cors());
 
 app.get('/assets', (req, res) => {
   const { view } = req.query;
-  console.log('Search Query:', view);
 
   const totalAssetClassPrices = [];
 
@@ -55,6 +54,24 @@ app.get('/assets', (req, res) => {
     res.json(totalAssetPrices);
   }
 });
+
+app.get('/portfolios', (req, res) => {
+  const totalPortfolioValue = [];
+
+  portfolios.forEach(portfolio => {
+    const date = portfolio.asOf.split('T')[0];
+
+    const totalPrice = portfolio.positions.reduce((acc, position) => {
+      const positionTotalPrice = position.price * position.quantity;
+      return acc + positionTotalPrice;
+    }, 0);
+
+    totalPortfolioValue.push({ date, totalPrice });
+  });
+
+  res.json(totalPortfolioValue);
+});
+
 
 const PORT = 3000;
 

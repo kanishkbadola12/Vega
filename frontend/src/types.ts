@@ -14,9 +14,9 @@ export interface ToggleViewProps {
 
 export interface ButtonProps {
     label: string;
-    onClick: () => void;
-    activeCondition: boolean;
-    activeClass: string;
-    inactiveClass: string;
+    onClick: (e: React.MouseEvent) => void;
     styleClass: string;
+    activeCondition?: boolean;
+    activeClass?: string;
+    inactiveClass?: string;
 }

@@ -8,15 +8,18 @@ import ToggleView from "../components/ui/ToggleView";
 import PositionsTable from "../components/PositionsTable";
 import Button from "../components/ui/Button";
 
-const Portfolio: React.FC = () => {
-  const [asset, setAsset] = useState<"assetClass" | "asset">("assetClass");
-  const [activeTab, setActiveTab] = useState<"portfolio" | "historical">("portfolio");
-  const [portfolioView, setPortfolioView] = useState('chart');
+type Portfolio = "portfolio" | "historical";
+type AssetType = "assetClass" | "asset";
+
+const Portfolio = (): React.ReactElement => {
+  const [asset, setAsset] = useState<AssetType>("assetClass");
+  const [activeTab, setActiveTab] = useState<Portfolio>("portfolio");
+  const [portfolioView, setPortfolioView] = useState<string>('chart');
   const [portfolioData, setPortfolioData] = useState<Asset[] | null>([])
 
   const { data, loading, error } = useFetch<Asset[]>(`http://localhost:3000/assets?view=${asset}`);
 
-  const handleTogglePortfolioView = () => {
+  const handleTogglePortfolioView = (): void => {
     setPortfolioView(prevView => prevView === 'chart' ? 'table' : 'chart');
   }
 
@@ -25,6 +28,7 @@ const Portfolio: React.FC = () => {
   }, [data]);
   
   if(loading) return <div>Loading...</div>;
+  if(error) return <div>Error</div>;
 
   return (
     <div className="container mx-auto px-4 py-8 bg-white text-black">
@@ -65,7 +69,7 @@ const Portfolio: React.FC = () => {
                     label="By Asset Class"
                     onClick={() => setAsset("assetClass")}
                     activeCondition={asset === "assetClass"}
-                    styleClass="px-3 py-1 rounded"
+                    styleClass="px-3 py-1 rounded font-semibold"
                     activeClass="bg-black text-white"
                     inactiveClass="bg-white text-black hover:bg-gray-100"
                   />
@@ -73,7 +77,7 @@ const Portfolio: React.FC = () => {
                     label="By Asset"
                     onClick={() => setAsset("asset")}
                     activeCondition={asset === "asset"}
-                    styleClass="px-3 py-1 rounded"
+                    styleClass="px-3 py-1 rounded font-semibold"
                     activeClass="bg-black text-white"
                     inactiveClass="bg-white text-black hover:bg-gray-100"
                   />
