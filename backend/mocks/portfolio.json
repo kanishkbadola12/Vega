@@ -1,0 +1,139 @@
+{
+    "portfolios": [
+      {
+        "id": "e4379f36-09d9-4f12-b6d7-3e62fe8fd5a2",
+        "asOf": "2023-01-01T00:00:00Z",
+        "positions": [
+          {
+            "id": 1,
+            "asset": "a4f4e2d0-24b8-4d27-b408-bc08b63d59f9",
+            "quantity": 10,
+            "asOf": "2023-01-01T00:00:00Z",
+            "price": 29032
+          },
+          {
+            "id": 2,
+            "asset": "6e6d60c0-687d-47c2-b33e-94cd9d36b2b9",
+            "quantity": 2,
+            "asOf": "2023-01-01T00:00:00Z",
+            "price": 4000045
+          },
+          {
+            "id": 3,
+            "asset": "d74f7a60-8d01-4aef-bb59-6e13b5c5e74a",
+            "quantity": 5000,
+            "asOf": "2023-01-01T00:00:00Z",
+            "price": 10000
+          }
+        ]
+      },
+      {
+        "id": "b1a8e5a6-9382-47b2-bf75-6e9989e68a64",
+        "asOf": "2023-05-01T00:00:00Z",
+        "positions": [
+          {
+            "id": 1,
+            "asset": "a4f4e2d0-24b8-4d27-b408-bc08b63d59f9",
+            "quantity": 10,
+            "asOf": "2023-05-01T00:00:00Z",
+            "price": 31000
+          },
+          {
+            "id": 2,
+            "asset": "6e6d60c0-687d-47c2-b33e-94cd9d36b2b9",
+            "quantity": 2,
+            "asOf": "2023-05-01T00:00:00Z",
+            "price": 4200000
+          },
+          {
+            "id": 3,
+            "asset": "d74f7a60-8d01-4aef-bb59-6e13b5c5e74a",
+            "quantity": 5000,
+            "asOf": "2023-05-01T00:00:00Z",
+            "price": 10100
+          }
+        ]
+      },
+      {
+        "id": "c6d9e6b0-17d1-4ff0-a8d3-6f5e1fa8d99d",
+        "asOf": "2023-07-01T00:00:00Z",
+        "positions": [
+          {
+            "id": 1,
+            "asset": "a4f4e2d0-24b8-4d27-b408-bc08b63d59f9",
+            "quantity": 10,
+            "asOf": "2023-07-01T00:00:00Z",
+            "price": 32000
+          },
+          {
+            "id": 2,
+            "asset": "6e6d60c0-687d-47c2-b33e-94cd9d36b2b9",
+            "quantity": 3,
+            "asOf": "2023-07-01T00:00:00Z",
+            "price": 4300000
+          },
+          {
+            "id": 3,
+            "asset": "d74f7a60-8d01-4aef-bb59-6e13b5c5e74a",
+            "quantity": 5000,
+            "asOf": "2023-07-01T00:00:00Z",
+            "price": 10200
+          }
+        ]
+      },
+      {
+        "id": "d3892e9e-7b0e-4029-9610-4280ab2fefbf",
+        "asOf": "2023-10-01T00:00:00Z",
+        "positions": [
+          {
+            "id": 1,
+            "asset": "a4f4e2d0-24b8-4d27-b408-bc08b63d59f9",
+            "quantity": 10,
+            "asOf": "2023-10-01T00:00:00Z",
+            "price": 33000
+          },
+          {
+            "id": 2,
+            "asset": "6e6d60c0-687d-47c2-b33e-94cd9d36b2b9",
+            "quantity": 5,
+            "asOf": "2023-10-01T00:00:00Z",
+            "price": 4500000
+          },
+          {
+            "id": 3,
+            "asset": "d74f7a60-8d01-4aef-bb59-6e13b5c5e74a",
+            "quantity": 5000,
+            "asOf": "2023-10-01T00:00:00Z",
+            "price": 10300
+          }
+        ]
+      },
+      {
+        "id": "f1e8b3d9-3254-48d5-bf0b-4d7463493e8e",
+        "asOf": "2023-12-01T00:00:00Z",
+        "positions": [
+          {
+            "id": 1,
+            "asset": "a4f4e2d0-24b8-4d27-b408-bc08b63d59f9",
+            "quantity": 15,
+            "asOf": "2023-12-01T00:00:00Z",
+            "price": 34000
+          },
+          {
+            "id": 2,
+            "asset": "6e6d60c0-687d-47c2-b33e-94cd9d36b2b9",
+            "quantity": 5,
+            "asOf": "2023-12-01T00:00:00Z",
+            "price": 4600000
+          },
+          {
+            "id": 3,
+            "asset": "d74f7a60-8d01-4aef-bb59-6e13b5c5e74a",
+            "quantity": 5000,
+            "asOf": "2023-12-01T00:00:00Z",
+            "price": 10400
+          }
+        ]
+      }
+    ]
+}

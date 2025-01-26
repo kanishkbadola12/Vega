@@ -1,0 +1,88 @@
+{
+    "prices": [
+      {
+        "id": "8f2a9c1a-5b24-45f4-b8f6-5f70b88b43f0",
+        "asset": "Apple Stock",
+        "type": "stock",
+        "date": "2023-02-15",
+        "price": 288.50
+      },
+      {
+        "id": "2b3c8f0f-5578-47d7-8e2b-95bb83c4d48e",
+        "asset": "Bitcoin",
+        "type": "crypto",
+        "date": "2023-03-10",
+        "price": 40500.78
+      },
+      {
+        "id": "b29b42d7-f5f1-49f3-96b1-36b5be3c407b",
+        "asset": "Ethereum",
+        "type": "crypto",
+        "date": "2023-01-20",
+        "price": 2550.42
+      },
+      {
+        "id": "d32d9c3f-1b88-4efb-aee2-b1787ca83016",
+        "asset": "US Dollar",
+        "type": "fiat",
+        "date": "2023-04-05",
+        "price": 1.00
+      },
+      {
+        "id": "1f4d6c9a-d91c-4f76-b727-49574ec92971",
+        "asset": "Tesla Stock",
+        "type": "stock",
+        "date": "2023-02-28",
+        "price": 665.25
+      },
+      {
+        "id": "7f6b98e7-cdb7-4b9f-9b87-dcc11db3bb44",
+        "asset": "Litecoin",
+        "type": "crypto",
+        "date": "2023-03-15",
+        "price": 150.89
+      },
+      {
+        "id": "79f2296e-4694-45a1-87d1-22f23143dbfc",
+        "asset": "Google Stock",
+        "type": "stock",
+        "date": "2023-02-05",
+        "price": 2750.35
+      },
+      {
+        "id": "98e992c5-e86c-44d4-b5d3-ea9912b6db2c",
+        "asset": "XRP",
+        "type": "crypto",
+        "date": "2023-03-22",
+        "price": 1.25
+      },
+      {
+        "id": "3ff2e08b-b8db-4c8c-897f-542d8e453d9d",
+        "asset": "Japanese Yen",
+        "type": "fiat",
+        "date": "2023-01-30",
+        "price": 0.0077
+      },
+      {
+        "id": "b51f56e4-d6e2-4b4a-9738-ff9a03ec38b9",
+        "asset": "S&P 500 Index Fund",
+        "type": "stock",
+        "date": "2023-03-12",
+        "price": 4320.75
+      },
+      {
+        "id": "3dcd7fbe-7d9f-41a1-bbbd-88b758953eb3",
+        "asset": "Vanguard Total Bond Market ETF",
+        "type": "stock",
+        "date": "2023-04-01",
+        "price": 84.25
+      },
+      {
+        "id": "eeecf7b3-f6ad-45f0-8f2b-48cd6c7d27f0",
+        "asset": "British Pound",
+        "type": "fiat",
+        "date": "2023-02-10",
+        "price": 1.37
+      }
+    ]
+}

@@ -1,0 +1,64 @@
+{
+    "assets": [
+      {
+        "id": "a4f4e2d0-24b8-4d27-b408-bc08b63d59f9",
+        "name": "Apple Stock",
+        "type": "stock"
+      },
+      {
+        "id": "6e6d60c0-687d-47c2-b33e-94cd9d36b2b9",
+        "name": "Bitcoin",
+        "type": "crypto"
+      },
+      {
+        "id": "2bcf8ee9-b0e3-4238-8d9b-4db85593f23d",
+        "name": "Ethereum",
+        "type": "crypto"
+      },
+      {
+        "id": "d74f7a60-8d01-4aef-bb59-6e13b5c5e74a",
+        "name": "US Dollar",
+        "type": "fiat"
+      },
+      {
+        "id": "c62d857b-032f-4684-9a5c-5da96d527a36",
+        "name": "Tesla Stock",
+        "type": "stock"
+      },
+      {
+        "id": "473a6d5a-f007-48e1-9773-639a14589de5",
+        "name": "Litecoin",
+        "type": "crypto"
+      },
+      {
+        "id": "baf7c2ae-d4b0-4068-bef5-e726d69424a4",
+        "name": "Google Stock",
+        "type": "stock"
+      },
+      {
+        "id": "fa3e9db2-9132-4a2e-90bc-643de12f8b3e",
+        "name": "XRP",
+        "type": "crypto"
+      },
+      {
+        "id": "fcd0b9b9-aba3-49f4-9188-dc988a91ff2e",
+        "name": "Japanese Yen",
+        "type": "fiat"
+      },
+      {
+        "id": "7b660d7e-4b24-4b34-bef5-039ed9d17a5c",
+        "name": "S&P 500 Index Fund",
+        "type": "stock"
+      },
+      {
+        "id": "e2950a5f-5f6e-44d9-b318-85bc31a01360",
+        "name": "Vanguard Total Bond Market ETF",
+        "type": "stock"
+      },
+      {
+        "id": "dd0b9d1e-dc6a-4749-b2f3-8a57a7026887",
+        "name": "British Pound",
+        "type": "fiat"
+      }
+    ]
+}  
