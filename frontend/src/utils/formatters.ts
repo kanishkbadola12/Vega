@@ -1,4 +1,4 @@
-export const formatDate = (dateString: string) => {
+export const formatDate = (dateString: string): string  => {
     const date = new Date(dateString);
     return new Intl.DateTimeFormat('en-US', {
       month: 'short',
@@ -8,7 +8,7 @@ export const formatDate = (dateString: string) => {
 }
 
   
-export const formatNumber = (value: number) => {
+export const formatNumber = (value: number): string  => {
     if (value >= 1_000_000) {
       return `$${(value / 1_000_000).toFixed(1)}M`;
     } else if (value >= 1_000) {

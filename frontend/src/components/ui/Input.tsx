@@ -7,7 +7,8 @@ const Input: React.FC<InputProps> = ({
     placeholder,
     value,
     onChange,
-    required = false,
+    hasError,
+    errorMessage,
   }) => {
     return (
       <div className="mb-4">
@@ -20,12 +21,15 @@ const Input: React.FC<InputProps> = ({
         <input
           type={type}
           id={id}
-          className="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className={`w-full mt-1 px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 ${
+            hasError ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"
+          }`}
           placeholder={placeholder}
-          required={required}
+          required
           value={value}
           onChange={onChange}
         />
+        {hasError && <p className="text-sm text-red-500 mt-1">{errorMessage}</p>}
       </div>
     );
 };

@@ -3,6 +3,9 @@ import "@testing-library/jest-dom"
 import Portfolio from "./Portfolio"
 import { useFetch } from "../hooks/useFetch"
 
+jest.mock("react-router", () => ({
+  useNavigate: jest.fn(),
+}))
 jest.mock("../hooks/useFetch")
 jest.mock("../components/PortfolioDonutChart", () => () => (
   <div data-testid="portfolio-donut-chart">Mocked Donut Chart</div>
@@ -92,7 +95,7 @@ describe("Portfolio Component", () => {
 
     render(<Portfolio />)
 
-    expect(screen.getByText("Error")).toBeInTheDocument()
+    expect(screen.getByText("Something went wrong!")).toBeInTheDocument()
   })
 
   test("resets to chart view and asset class when switching back to Portfolio tab", async () => {

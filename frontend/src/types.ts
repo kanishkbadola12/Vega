@@ -1,4 +1,8 @@
+import { Dispatch, SetStateAction } from 'react';
 import { TooltipProps } from 'recharts';
+
+export type PortfolioType = 'portfolio' | 'historical';
+export type AssetType = 'assetClass' | 'asset';
 
 export interface Asset {
     name: string;
@@ -7,6 +11,16 @@ export interface Asset {
 
 export interface PortfolioDataProps {
     portfolioData: Asset[] | null
+}
+
+export interface TabsProps {
+    activeTab: string;
+    handlePortfolioTabClick: () => void;
+    setActiveTab: Dispatch<SetStateAction<PortfolioType>>
+}
+
+export interface HeaderProps {
+    userName: string
 }
 
 export interface ToggleViewProps {
@@ -32,6 +46,8 @@ export interface InputProps {
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
+    hasError: boolean
+    errorMessage: string | null;
   }
 
 export interface CustomTooltipProps extends TooltipProps<number, string> {

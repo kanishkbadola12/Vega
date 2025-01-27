@@ -1,11 +1,10 @@
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import { PortfolioDataProps } from "../types";
 import { colorPalette } from "../colorPallet";
+import LoadingSpinner from "./layout/LoadingSpinner";
 
 const PortfolioDonutChart = ({ portfolioData }: PortfolioDataProps): React.ReactElement => {
-  if (!portfolioData) {
-    return <div>Loading...</div>;
-  }
+  if (!portfolioData) return <LoadingSpinner />;
   
   const COLORS = portfolioData.map((_, index) => {
     return colorPalette[index % colorPalette.length].hexCode;
