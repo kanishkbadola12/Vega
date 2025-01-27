@@ -1,4 +1,4 @@
-import type React from "react";
+import React from "react";
 import { useEffect, useState } from "react";
 import PortfolioDonutChart from "../components/PortfolioDonutChart";
 import HistoricalChart from "../components/HistoricalChart";
@@ -8,19 +8,24 @@ import ToggleView from "../components/ui/ToggleView";
 import PositionsTable from "../components/PositionsTable";
 import Button from "../components/ui/Button";
 
-type Portfolio = "portfolio" | "historical";
-type AssetType = "assetClass" | "asset";
+type Portfolio = 'portfolio' | 'historical';
+type AssetType = 'assetClass' | 'asset';
 
 const Portfolio = (): React.ReactElement => {
-  const [asset, setAsset] = useState<AssetType>("assetClass");
-  const [activeTab, setActiveTab] = useState<Portfolio>("portfolio");
+  const [asset, setAsset] = useState<AssetType>('assetClass');
+  const [activeTab, setActiveTab] = useState<Portfolio>('portfolio');
   const [portfolioView, setPortfolioView] = useState<string>('chart');
-  const [portfolioData, setPortfolioData] = useState<Asset[] | null>([])
-
+  const [portfolioData, setPortfolioData] = useState<Asset[] | null>([]);
   const { data, loading, error } = useFetch<Asset[]>(`http://localhost:3000/assets?view=${asset}`);
 
   const handleTogglePortfolioView = (): void => {
     setPortfolioView(prevView => prevView === 'chart' ? 'table' : 'chart');
+  };
+
+  const handlePortfolioTabClick = (): void => {
+    setActiveTab("portfolio"); 
+    setPortfolioView('chart'); 
+    setAsset('assetClass');
   }
 
   useEffect(() => {
@@ -39,11 +44,12 @@ const Portfolio = (): React.ReactElement => {
         <div className="flex border-b border-gray-300">
           <Button
             label="Portfolio"
-            onClick={() => setActiveTab("portfolio")}
+            onClick={handlePortfolioTabClick}
             activeCondition={activeTab === "portfolio"}
             styleClass="py-2 px-4"
             activeClass="border-b-2 border-black-500 font-medium"
             inactiveClass="text-gray-600 hover:text-black"
+            testId="portfolio-button"
           />
           <Button
             label="Historical"
@@ -52,6 +58,7 @@ const Portfolio = (): React.ReactElement => {
             styleClass="py-2 px-4"
             activeClass="border-b-2 border-black-500 font-medium"
             inactiveClass="text-gray-600 hover:text-black"
+            testId="historical-button"
           />
         </div>
       </div>
@@ -64,22 +71,24 @@ const Portfolio = (): React.ReactElement => {
             </div>
             {portfolioView === "chart" ? (
               <>
-                <div className="flex space-x-2 mb-4">
+                <div className="flex flex-col gap-4 items-center sm:flex-row space-x-2 mb-4">
                   <Button
                     label="By Asset Class"
                     onClick={() => setAsset("assetClass")}
                     activeCondition={asset === "assetClass"}
-                    styleClass="px-3 py-1 rounded font-semibold"
+                    styleClass="w-[50%] sm:w-auto px-3 py-1 rounded font-semibold"
                     activeClass="bg-black text-white"
                     inactiveClass="bg-white text-black hover:bg-gray-100"
+                    testId="asset-button"
                   />
                   <Button
                     label="By Asset"
                     onClick={() => setAsset("asset")}
                     activeCondition={asset === "asset"}
-                    styleClass="px-3 py-1 rounded font-semibold"
+                    styleClass="w-[50%] sm:w-auto px-3 py-1 rounded font-semibold"
                     activeClass="bg-black text-white"
                     inactiveClass="bg-white text-black hover:bg-gray-100"
+                    testId="asset-class-button"
                   />
                 </div>
                 <PortfolioDonutChart portfolioData={portfolioData} />

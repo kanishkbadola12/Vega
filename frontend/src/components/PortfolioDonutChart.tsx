@@ -24,6 +24,7 @@ const PortfolioDonutChart = ({ portfolioData }: PortfolioDataProps): React.React
               outerRadius={100}
               paddingAngle={5}
               dataKey="price"
+              legendType="circle"
             >
               {portfolioData.map((_, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
@@ -44,7 +45,6 @@ const PortfolioDonutChart = ({ portfolioData }: PortfolioDataProps): React.React
         </ResponsiveContainer>
       </div>
     </div>
-    
   )
 }
 

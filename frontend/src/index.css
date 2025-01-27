@@ -10,3 +10,36 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media (max-width: 800px) {
+  .recharts-legend-wrapper {
+    bottom: -10px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .recharts-responsive-container {
+    height: 350px !important;
+  }
+  .recharts-wrapper {
+    max-height: max-content !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .recharts-responsive-container {
+    height: 450px !important;
+  }
+  .recharts-wrapper {
+    max-height: max-content !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .recharts-responsive-container {
+    height: 500px !important;
+  }
+  .recharts-wrapper {
+    max-height: max-content !important;
+  }
+}
