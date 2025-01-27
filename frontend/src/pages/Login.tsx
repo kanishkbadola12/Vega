@@ -11,6 +11,7 @@ const Login = (): React.ReactElement => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(true);
   const navigate = useNavigate();
 
+  //validate login form input fields
   const validateFields = (): boolean => {
     let isValid = true;
 
@@ -62,11 +63,11 @@ const Login = (): React.ReactElement => {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-100">
-      <div className="flex flex-col w-full max-w-md p-8 bg-white shadow-lg rounded-2xl">
+      <div className="flex items-center flex-col w-full max-w-md p-8 bg-white shadow-lg rounded-2xl">
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
           Login
         </h2>
-        <div className="mb-2">
+        <div className="mb-2 w-full">
           <Input
             id="email"
             label="Email Address"
@@ -82,7 +83,7 @@ const Login = (): React.ReactElement => {
             errorMessage={emailError}
           />
         </div>
-        <div className="mb-2">
+        <div className="mb-2 w-full">
           <Input
             id="password"
             label="Password"
@@ -101,11 +102,11 @@ const Login = (): React.ReactElement => {
         <Button
           label="Sign In"
           onClick={(e: React.MouseEvent) => handleSubmit(e)}
-          styleClass="w-full py-2 px-4 bg-black text-white font-medium rounded-lg shadow-md cursor-pointer hover:bg-gray-800 transition duration-300"
+          styleClass="w-1/2 py-2 px-4 bg-black text-white font-medium rounded-lg shadow-md cursor-pointer hover:bg-gray-800 transition duration-300"
           testId="sign-in-button"
         />
         {!isAuthenticated && (
-          <span className="text-red-500 text-center text-sm block mt-4">
+          <span className="text-red-500 text-center text-lg block mt-4">
             Invalid credentials
           </span>
         )}

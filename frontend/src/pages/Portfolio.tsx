@@ -1,5 +1,4 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import PortfolioDonutChart from "../components/PortfolioDonutChart";
 import HistoricalChart from "../components/HistoricalChart";
 import { useFetch } from "../hooks/useFetch";
@@ -27,16 +26,18 @@ const Portfolio = (): React.ReactElement => {
     setPortfolioView(prevView => prevView === 'chart' ? 'table' : 'chart');
   };
 
+  // Reset to original view when coming back to the Portolio tab
   const handlePortfolioTabClick = (): void => {
     setActiveTab("portfolio"); 
     setPortfolioView('chart'); 
     setAsset('assetClass');
-  }
+  };
 
+  // Set Portfolio data as per class or a certain asset
   useEffect(() => {
     setPortfolioData(data);
   }, [data]);
-
+  
   useEffect(() => {
     const storedCredentials = localStorage.getItem("loginCredentials");
     
@@ -45,8 +46,6 @@ const Portfolio = (): React.ReactElement => {
       setUserName(fullName.split(" ")[0] || "Guest");
     }
   }, []);
-  
-  if (error) return <Error />
 
   return (
     <div className="container mx-auto px-4 py-8 bg-white text-black">
@@ -56,47 +55,53 @@ const Portfolio = (): React.ReactElement => {
           <Tabs handlePortfolioTabClick={handlePortfolioTabClick} activeTab={activeTab} setActiveTab={setActiveTab} />
         </div>
       </div>
-      {loading ? <LoadingSpinner /> : (
-        activeTab === "portfolio" ? (
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
-            <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-              <div className="flex justify-between mb-4">
-                <h2 className="text-2xl font-semibold mb-4 text-black">Portfolio Balance</h2>
-                <ToggleView portfolioView={portfolioView} handleTogglePortfolioView={handleTogglePortfolioView} />
-              </div>
-              {portfolioView === "chart" ? (
-                <>
-                  <div className="flex flex-col gap-4 items-center sm:flex-row space-x-2 mb-4">
-                    <Button
-                      label="By Asset Class"
-                      onClick={() => setAsset("assetClass")}
-                      activeCondition={asset === "assetClass"}
-                      styleClass="w-[50%] sm:w-auto px-3 py-1 rounded font-semibold"
-                      activeClass="bg-black text-white"
-                      inactiveClass="bg-white text-black hover:bg-gray-100"
-                      testId="asset-button"
-                    />
-                    <Button
-                      label="By Asset"
-                      onClick={() => setAsset("asset")}
-                      activeCondition={asset === "asset"}
-                      styleClass="w-[50%] sm:w-auto px-3 py-1 rounded font-semibold"
-                      activeClass="bg-black text-white"
-                      inactiveClass="bg-white text-black hover:bg-gray-100"
-                      testId="asset-class-button"
-                    />
+      {activeTab === "portfolio" ? (
+        <>
+          {/* Handle the error state: if an error occurs during data fetching, display an error message or component. */}
+          {error ? (
+            <Error />
+          ) : (
+            // Display a loading spinner while the data is being fetched. Once loading is complete, render the main content.
+            loading ? <LoadingSpinner /> : (
+              <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
+                <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+                  <div className="flex justify-between mb-4">
+                    <h2 className="text-2xl font-semibold mb-4 text-black">Portfolio Balance</h2>
+                    <ToggleView portfolioView={portfolioView} handleTogglePortfolioView={handleTogglePortfolioView} />
                   </div>
-                  <PortfolioDonutChart portfolioData={portfolioData} />
-                </>
-              ) : (
-                <PositionsTable portfolioData={portfolioData} />
-              )}
-            </div>
-          </div>
-        ) : (
-          <HistoricalChart />
-        )
-      )}
+                  {portfolioView === "chart" ? (
+                    <>
+                      <div className="flex flex-col gap-4 items-center sm:flex-row space-x-2 mb-4">
+                        <Button
+                          label="By Asset Class"
+                          onClick={() => setAsset("assetClass")}
+                          activeCondition={asset === "assetClass"}
+                          styleClass="w-[50%] sm:w-auto px-3 py-1 rounded font-semibold"
+                          activeClass="bg-black text-white"
+                          inactiveClass="bg-white text-black hover:bg-gray-100"
+                          testId="asset-button"
+                        />
+                        <Button
+                          label="By Asset"
+                          onClick={() => setAsset("asset")}
+                          activeCondition={asset === "asset"}
+                          styleClass="w-[50%] sm:w-auto px-3 py-1 rounded font-semibold"
+                          activeClass="bg-black text-white"
+                          inactiveClass="bg-white text-black hover:bg-gray-100"
+                          testId="asset-class-button"
+                        />
+                      </div>
+                      <PortfolioDonutChart portfolioData={portfolioData} />
+                    </>
+                  ) : (
+                    <PositionsTable portfolioData={portfolioData} />
+                  )}
+                </div>
+              </div>
+            )
+          )}
+        </>
+      ): <HistoricalChart />}
     </div>
   );
 };

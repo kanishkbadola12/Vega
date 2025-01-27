@@ -8,11 +8,13 @@ import LoadingSpinner from "./layout/LoadingSpinner";
 const HistoricalChart = (): React.ReactElement => {
   const { data, loading, error } = useFetch<any>(`http://localhost:3000/portfolios`);
 
+  // Handle the error state: if an error occurs during data fetching, display an error message or component.
   if (error) return <Error />
 
   return (
     <div className="bg-gray-100 p-6 rounded-lg shadow-md">
       <h2 className="text-2xl font-semibold mb-4 text-black">Historical Performance</h2>
+      {/* Display a loading spinner while the data is being fetched. Once loading is complete, render the main content. */}
       {loading ? <LoadingSpinner /> : (
         <ResponsiveContainer width="100%" height={400}>
           <LineChart
